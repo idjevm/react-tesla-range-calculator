@@ -15,9 +15,7 @@ const LabelLists = (props) => {
                 value={size}
                 checked={value === size}
                 onChange={() => { changeHandler(size) }} />
-            <p>
-                {size}"
-        </p>
+            <p>{size}"</p>
         </label>
     ));
 
@@ -25,7 +23,7 @@ const LabelLists = (props) => {
         <div>
             {LabelItems}
         </div>
-    )
+    );
 }
 
 const TeslaWheels = (props) => (

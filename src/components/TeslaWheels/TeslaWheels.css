@@ -29,7 +29,7 @@
   background-image: url(../../assets/wheels/21.svg);
 }
 .tesla-wheels__item--focused {
-  background-color: #f2f2f2;
+  background-color: #1686b9;
 }
 .tesla-wheels__item--active {
   border-color: #39f;
