@@ -150,7 +150,7 @@ class TeslaBattery extends Component {
                         />
                     </div>
                     <TeslaWheels
-                        valie={config.wheels}
+                        value={config.wheels}
                         handleChangeWheels={this.handleChangeWheels}
                     />
                 </div>
