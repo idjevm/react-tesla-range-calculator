@@ -48,6 +48,7 @@ class TeslaBattery extends Component {
     // update stats
     statsUpdate() {
         const carModels = ['60', '60D', '75', '75D', '90D', 'P100D'];
+        // Fech model info from BatteryService and calculate and then update state
         this.setState({
             carstats: this.calculateStats(carModels, this.state.config)
         })
@@ -59,7 +60,7 @@ class TeslaBattery extends Component {
         // Update config statie with new value
         title === 'Speed' ? config['speed'] = newValue : config['temperature'] = newValue;
         // update state
-        this.setState({ config });
+        this.setState({ config }, () => {this.statsUpdate()});
     }
 
     // handle increment
@@ -107,14 +108,14 @@ class TeslaBattery extends Component {
     handleChangeClimate() {
         const config = { ...this.state.config };
         config['climate'] = !this.state.config.climate;
-        this.setState({ config });
+        this.setState({ config }, () => {this.statsUpdate()});
     }
 
     // hande wheels 
     handleChangeWheels(size) {
         const config = { ...this.state.config };
         config['wheels'] = size;
-        this.setState({ config });
+        this.setState({ config }, () => {this.statsUpdate()});
     }
 
     componentDidMount() {
